@@ -1,0 +1,138 @@
+$primary-color: #324a5f;
+$secondary-color: #4db6ac;
+$ternary-color: #f1d302;
+$gray-color: #e2e2e2;
+$light-white-color: #fdfffc;
+$red-color: #c1292e;
+$gray2-color: #cfcfcf;
+$primary-dark-color: #1b2a41;
+$dark-color: #424874;
+$light-color: #f4eeff;
+$danger-color: #dc3545;
+$success-color: #281745;
+$primary-color-hover: #1e8379;
+$max-width: 1100px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 1.7rem;
+$font-size-h3: 1.3rem;
+$font-size-h4: 1.1rem;
+$font-size-h5: 0.7rem;
+$font-size-h6: 0.4rem;
+
+$font-size-paragraph: 1rem;
+
+// Set text color based on backgorund
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Heading size
+//@import './font-size';
+h1 {
+  font-size: $font-size-h1;
+  font-weight: 400;
+
+  &.bold {
+    font-weight: 700;
+  }
+  &.extra-bold {
+    font-weight: 900;
+  }
+}
+
+// Headings
+h2 {
+  font-size: $font-size-h2;
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.subtitle {
+    font-weight: 400;
+  }
+}
+h3 {
+  font-size: $font-size-h3;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: $font-size-h6;
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.regular {
+    font-weight: 400;
+  }
+}
+
+p {
+  font-size: $font-size-paragraph;
+}
+
+// Mix-in. Function.
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Margin & Padding
+$spaceamounts: (1, 1.5, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  // All around margin
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  // Vertical margin
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  // Horizontal margin
+  .mx-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .mt-#{$space} {
+    margin-top: #{$space}rem !important;
+  }
+
+  .mb-#{$space} {
+    margin-bottom: #{$space}rem !important;
+  }
+
+  // Margin right
+  .mr-#{$space} {
+    margin-right: #{$space}rem;
+  }
+
+  // Margin left
+  .ml-#{$space} {
+    margin-left: #{$space}rem;
+  }
+
+  // All around padding
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  // Vertical padding
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+
+  // Horizontal padding
+  .px-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}

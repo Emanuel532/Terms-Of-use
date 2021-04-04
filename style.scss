@@ -1,0 +1,101 @@
+@import "_config.scss";
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.banner {
+  max-width: 100%;
+  height: auto;
+  display: table;
+  margin: 0 auto;
+}
+
+.terms {
+  padding: 1px 50px 1px 50px;
+  text-align: left;
+  background-color: white;
+  color: $primary-color;
+  h1,
+  h2 {
+    color: $primary-color;
+  }
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: $primary-color;
+  display: inline-block;
+  transition: 0.3s;
+  font-weight: bold;
+  text-decoration: none;
+}
+.content {
+  a:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+//INAINTE
+.sidebar {
+  h2 {
+    text-align: center;
+  }
+  a:hover:not(.active) {
+    background-color: $gray2-color;
+    color: white;
+  }
+  a:focus {
+    background-color: $secondary-color;
+    color: white;
+  }
+  margin: 0;
+  padding: 0;
+  width: 175px;
+  background-color: $gray-color;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+  a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+}
+
+div.content {
+  margin-left: 140px;
+  padding: 0px 1px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    a,
+    h2 {
+      margin-left: 2.5rem;
+      float: none;
+      text-align: left;
+    }
+  }
+  div.content {
+    margin-left: -0.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
